@@ -21,10 +21,10 @@ resources:
 jobs:
   - name: my-job
     plan:
-      - get: build-metadata
+      - put: build-metadata  # Always put to prevent caches on parallel builds
 ```
 
-After you got the resource `build-metadata`, either load it directly as build vars:
+After you put the resource `build-metadata`, either load it directly as build vars:
 
 ```yaml
 - load_var: build

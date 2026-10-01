@@ -1,9 +1,2 @@
 #!/bin/sh
-set -eu
-
-# Alpine date doesn't support milliseconds
-timestamp=$(jq -n 'now * 1000 | floor')
-
-jq -n \
-  --arg timestamp "${timestamp:-}" \
-  '[{timestamp: $timestamp}]'
+echo '[]'
